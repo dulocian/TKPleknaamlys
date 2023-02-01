@@ -204,14 +204,6 @@ if selected == "Besigtig Lys":
            data_return_mode=DataReturnMode.AS_INPUT,
            columns_auto_size_mode=ColumnsAutoSizeMode.FIT_CONTENTS
            )
-
-    download_df = grid_return["data"]
-    col2.download_button(
-        "🔽 Download as excel",
-        data=to_excel(download_df),
-        file_name="output.xlsx",
-        mime="application/vnd.ms-excel",
-    )
     
     sel_row = grid_return["selected_rows"]
 
