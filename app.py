@@ -86,8 +86,8 @@ currency = "USD"
 txt_whatis = "'n Pleknaamlys dien as 'n sinchroniese woordeboek van plekname wat die amptelik goedgekeurde name binne 'n bepaalde geografiese streek lys."
 
 # --------------------------------------
-st.set_page_config(layout="wide")
-st.set_page_config(page_title=page_title, page_icon=page_icon, layout=layout)
+
+st.set_page_config(page_title=page_title, page_icon=page_icon, layout=layout, layout="wide")
 st.title(page_title)
 
 # --- DROP DOWN VALUES FOR SELECTING THE PERIOD ---
