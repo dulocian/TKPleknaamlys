@@ -50,18 +50,6 @@ def center():
    longitude = location.longitude
    return latitude, longitude
 
-def to_excel(df) -> bytes:
-    output = io.BytesIO()
-    writer = pd.ExcelWriter(output, engine="xlsxwriter")
-    df.to_excel(writer, sheet_name="Sheet1", index=False, startrow=1)
-    worksheet = writer.sheets['Sheet1']
-    text = 'Nuutste weergawe soos op DATUM'
-    worksheet.write(0, 0, text)
-    writer.save()
-    processed_data = output.getvalue()
-    return processed_data
-
-
 
 
 icondict = { # https://fontawesome.com/search?q=place&o=r
@@ -98,7 +86,7 @@ currency = "USD"
 txt_whatis = "'n Pleknaamlys dien as 'n sinchroniese woordeboek van plekname wat die amptelik goedgekeurde name binne 'n bepaalde geografiese streek lys."
 
 # --------------------------------------
-
+st.set_page_config(layout="wide")
 st.set_page_config(page_title=page_title, page_icon=page_icon, layout=layout)
 st.title(page_title)
 
