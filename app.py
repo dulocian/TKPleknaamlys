@@ -23,7 +23,7 @@ from st_aggrid.grid_options_builder import GridOptionsBuilder
 # --- DATABASE --- #
 @st.cache
 def load_data():
-    df = pd.read_csv("CSV_samples/meesterlys.csv")
+    df = pd.read_csv("CSV_samples/meesterlys.csv", sep='\t')
     return df
 
 
@@ -190,7 +190,8 @@ if selected == "Besigtig Lys":
            width='100%',
            allow_unsafe_jscode=True,
            data_return_mode=DataReturnMode.AS_INPUT,
-           columns_auto_size_mode=ColumnsAutoSizeMode.FIT_CONTENTS
+           columns_auto_size_mode=ColumnsAutoSizeMode.FIT_CONTENTS,
+           enable_enterprise_modules=False
            )
     
     sel_row = grid_return["selected_rows"]
@@ -211,9 +212,9 @@ if selected == "Besigtig Lys":
             boloonicon = 'location-crosshairs'
             balooncolour = 'lightgray'
 
-            if r['Kategorie'] in icondict:
-                boloonicon = icondict[r['Kategorie']][0]
-                balooncolour = icondict[r['Kategorie']][1]
+            if r['(GvH) Kategorie'] in icondict:
+                boloonicon = icondict[r['(GvH) Kategorie']][0]
+                balooncolour = icondict[r['(GvH) Kategorie']][1]
 
             # icons are not rendering
             icon = folium.Icon(color=balooncolour, icon="circle", prefix='fa', icon_color='white')
@@ -222,7 +223,7 @@ if selected == "Besigtig Lys":
             ).add_to(map_sby)
 
     # call to render Folium map in Streamlit
-    st_folium(map_sby, height=350, width=700)
+    st_folium(map_sby, height=450, width=800)
 
     
     
