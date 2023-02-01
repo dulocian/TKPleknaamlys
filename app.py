@@ -76,7 +76,7 @@ icondict = { # https://fontawesome.com/search?q=place&o=r
 # -------------- SETTINGS --------------
 page_title = "SA Pleknaamlys"
 page_icon = ":earth_africa:"  # emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
-layout = "centered"
+layout = "wide"
 
 incomes = ["Salary", "Blog", "Other Income"]
 expenses = ["Rent", "Utilities", "Groceries", "Car", "Other Expenses", "Saving"]
@@ -87,7 +87,7 @@ txt_whatis = "'n Pleknaamlys dien as 'n sinchroniese woordeboek van plekname wat
 
 # --------------------------------------
 
-st.set_page_config(page_title=page_title, page_icon=page_icon, layout=layout, layout="wide")
+st.set_page_config(page_title=page_title, page_icon=page_icon, layout=layout)
 st.title(page_title)
 
 # --- DROP DOWN VALUES FOR SELECTING THE PERIOD ---
