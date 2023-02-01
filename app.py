@@ -207,6 +207,7 @@ if selected == "Besigtig Lys":
         # add markers to map
         for r in sel_row:
             coord = str(r['latitude']) + "," + str(r['longitude'])
+            popupstr = "PLEKNAAM: " + r['Pleknaam'] + "<br>DESCRIP: " + r['Description'] + "<br>" + coord
 
             # default
             boloonicon = 'location-crosshairs'
@@ -219,7 +220,7 @@ if selected == "Besigtig Lys":
             # icons are not rendering
             icon = folium.Icon(color=balooncolour, icon="circle", prefix='fa', icon_color='white')
             folium.Marker(
-                location=[r['latitude'], r['longitude']], popup=coord, tooltip=r['Pleknaam'], icon=icon
+                location=[r['latitude'], r['longitude']], popup=popupstr, tooltip=r['Pleknaam'], icon=icon
             ).add_to(map_sby)
 
     # call to render Folium map in Streamlit
